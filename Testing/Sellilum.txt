@@ -1,0 +1,36 @@
+package example.exone;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class First {
+	
+	
+	   
+	   public static void main(String[] args) throws InterruptedException {
+	        // Set the path to the EdgeDriver executable (make sure to change the path if needed)
+	        System.setProperty("webdriver.edge.driver", "path/to/edgedriver");
+
+	        // Create an instance of EdgeDriver
+	        WebDriver driver = new ChromeDriver();
+	        
+	        // Open a webpage (e.g., Google)
+	        driver.get("https://www.google.com");
+	        WebElement w =driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div[1]/div[2]/textarea"));
+	        w.sendKeys("dog images");
+	        
+	        Thread.sleep(2000);
+	        WebElement w1 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[2]/div[4]/div[6]/center/input[1]"));
+	        w1.click();
+	        
+	        
+	        // Perform other actions if needed
+	        
+	        // Close the browser
+	        //driver.quit();
+	    }
+
+}
